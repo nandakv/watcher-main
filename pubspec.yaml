@@ -1,0 +1,1073 @@
+name: privo
+description: Credit saison app with getx as architecture
+
+# The following line prevents the package from being accidentally published to
+# pub.dev using `flutter pub publish`. This is preferred for private packages.
+publish_to: "none" # Remove this line if you wish to publish to pub.dev
+
+# The following defines the version and build number for your application.
+# A version number is three numbers separated by dots, like 1.2.43
+# followed by an optional build number separated by a +.
+# Both the version and the builder number may be overridden in flutter
+# build by specifying --build-name and --build-number, respectively.
+# In Android, build-name is used as versionName while build-number used as versionCode.
+# Read more about Android versioning at https://developer.android.com/studio/publish/versioning
+# In iOS, build-name is used as CFBundleShortVersionString while build-number used as CFBundleVersion.
+# Read more about iOS versioning at
+# https://developer.apple.com/library/archive/documentation/General/Reference/InfoPlistKeyReference/Articles/CoreFoundationKeys.html
+
+version: 4.0.3+158
+
+environment:
+  sdk: ">=2.18.0 <3.0.0"
+
+# Dependencies specify other packages that your package needs in order to work.
+# To automatically upgrade your package dependencies to the latest versions
+# consider running `flutter pub upgrade --major-versions`. Alternatively,
+# dependencies can be manually updated by changing the version numbers below to
+# the latest version available on pub.dev. To see which dependencies have newer
+# versions available, run `flutter pub outdated`.
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_localizations:
+    sdk: flutter
+
+  # The following adds the Cupertino Icons font to your application.
+  # Use with the CupertinoIcons class for iOS style icons.
+  cupertino_icons: 1.0.2
+
+  #firebase
+  firebase_core: 3.7.0
+  firebase_analytics: 11.3.4
+  firebase_dynamic_links: 6.0.9
+  firebase_crashlytics: 4.1.4
+  #  firebase_auth_mocks: 0.11.0
+  firebase_messaging: 15.1.4
+
+  #amplify
+  amplify_flutter: 2.6.1
+  amplify_core: 2.6.1
+  amplify_auth_cognito: 2.6.1
+  amplify_storage_s3: 2.6.1
+
+  #state management plugin
+  get: 4.6.6
+
+  #local storage plugin
+  flutter_secure_storage: 9.2.4
+
+  #permission plugin
+  permission_handler: 10.2.0
+
+  #ui utils
+  after_layout: 1.2.0
+  fluttertoast: 8.2.12
+  smart_auth: 3.2.0
+  pinput: 5.0.0
+  flutter_typeahead: 5.2.0
+  google_fonts: 6.2.1
+  flutter_svg: 2.0.5
+  flutter_spinkit: 5.1.0
+  lottie: 2.3.2
+
+  #device level
+  app_settings: 6.1.1
+  device_info_plus: 10.1.2
+  installed_apps: 1.6.0
+#  device_apps: 2.2.0
+
+  #utils
+  screen_protector: 1.4.2
+  in_validator: 1.0.0
+  #  flutter_webview_plugin:  0.4.0
+  intl: 0.19.0
+  jiffy: 6.3.0
+  url_launcher: 6.2.6
+  flutter_local_notifications: 17.2.4
+  package_info_plus: 3.0.2
+  webengage_flutter: 1.7.0
+  animated_text_kit: 4.2.2
+  dart_ipify: 1.1.1
+  webview_flutter_plus: 0.4.19
+  expandable_page_view: 1.0.17
+  flutter_inappwebview: 6.1.0
+  file_picker: 10.3.2
+
+  #third party sdk
+  razorpay_flutter: 1.4.0
+  hypersnapsdk_flutter: 5.5.0
+  appsflyer_sdk: 6.16.21
+
+  #flavour
+  flutter_flavorizr: 2.1.6
+  carousel_slider: 5.0.0
+  card_swiper: 2.0.4
+  dots_indicator: 2.1.0
+  flutter_pdfview: 1.4.0
+  in_app_review: 2.0.10
+  pie_chart: 5.4.0
+
+  #datadog
+  datadog_flutter_plugin: 2.7.0
+  datadog_tracking_http_client: 2.2.0
+
+  #digio
+  kyc_workflow: 2.0.6
+#  esign_plugin: 1.0.18
+
+  advertising_id: ^2.6.0
+  connectivity_plus: 6.1.4
+  another_telephony: 0.4.1
+#  telephony: ^0.2.0
+
+
+  #for fl_chart
+  equatable: ^2.0.7
+
+  flutter_screenutil: ^5.9.3
+
+  #salesforce
+  sfmc: ^8.2.0
+
+dependency_overrides:
+  package_info_plus: 4.2.0
+  share_plus: 11.0.0
+  archive: 3.6.1
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  # The "flutter_lints" package below contains a set of recommended lints to
+  # encourage good coding practices. The lint set provided by the package is
+  # activated in the `analysis_options.yaml` file located at the root of your
+  # package. See that file for information about deactivating specific lint
+  # rules and activating additional ones.
+  flutter_lints: 2.0.1
+
+flavorizr:
+  app:
+    android:
+      flavorDimensions: "flavor-type"
+    ios:
+
+  flavors:
+    qa:
+      app:
+        name: "Credit Saison IN QA"
+        icon: "assets/Privo_logo_int.png"
+
+      android:
+        applicationId: "com.privo.creditsaison.qa"
+        icon: "assets/Privo_logo_int.png"
+        firebase:
+          config: ".firebase/qa/google-services.json"
+
+      ios:
+        bundleId: "com.privo.creditsaison.qa"
+        icon: "assets/Privo_logo_int.png"
+        firebase:
+          config: ".firebase/qa/GoogleService-Info.plist"
+        variables:
+          WEBENGAGE_KEY:
+            value: "in~76aa303"
+          DEEPLINK_TEMPLATE:
+            value: "applinks:iosdtest.onelink.me"
+          BRAND_DOMAIN:
+            value: "applinks:uatapp.uat.csifin.xyz"
+
+    uat:
+      app:
+        name: "Credit Saison IN UAT"
+        icon: "assets/Privo_logo_int.png"
+
+      android:
+        applicationId: "com.privo.creditsaison.uat"
+        icon: "assets/Privo_logo_int.png"
+        firebase:
+          config: ".firebase/uat/google-services.json"
+
+      ios:
+        bundleId: "com.privo.creditsaison.uat"
+        icon: "assets/Privo_logo_int.png"
+        firebase:
+          config: ".firebase/uat/GoogleService-Info.plist"
+        variables:
+          WEBENGAGE_KEY:
+            value: "in~76aa303"
+          DEEPLINK_TEMPLATE:
+            value: "applinks:iosdtest.onelink.me"
+          BRAND_DOMAIN:
+            value: "applinks:uatapp.uat.csifin.xyz"
+
+    integration:
+      app:
+        name: "Credit Saison IN Int"
+        icon: "assets/Privo_logo_int.png"
+
+      android:
+        applicationId: "com.privo.creditsaison.int"
+        icon: "assets/Privo_logo_int.png"
+        firebase:
+          config: ".firebase/integration/google-services.json"
+
+      ios:
+        bundleId: "com.privo.creditsaison.int"
+        icon: "assets/Privo_logo_int.png"
+        firebase:
+          config: ".firebase/integration/GoogleService-Info.plist"
+        variables:
+          WEBENGAGE_KEY:
+            value: "in~76aa303"
+          DEEPLINK_TEMPLATE:
+            value: "applinks:iosdtest.onelink.me"
+          BRAND_DOMAIN:
+            value: "applinks:uatapp.uat.csifin.xyz"
+
+    dev:
+      app:
+        name: "Credit Saison IN DEV"
+        icon: "assets/Privo_logo_int.png"
+
+      android:
+        applicationId: "com.privo.creditsaison.dev"
+        icon: "assets/Privo_logo_int.png"
+        firebase:
+          config: ".firebase/dev/google-services.json"
+
+      ios:
+        bundleId: "com.privo.creditsaison.dev"
+        icon: "assets/Privo_logo_int.png"
+        firebase:
+          config: ".firebase/dev/GoogleService-Info.plist"
+        variables:
+          WEBENGAGE_KEY:
+            value: "in~76aa303"
+          DEEPLINK_TEMPLATE:
+            value: "applinks:iosdtest.onelink.me"
+          BRAND_DOMAIN:
+            value: "applinks:uatapp.uat.csifin.xyz"
+
+    prod:
+      app:
+        name: "Credit Saison IN"
+        icon: "assets/Privo_Playstore_logo.png"
+
+      android:
+        applicationId: "com.privo.creditsaison"
+        icon: "assets/Privo_Playstore_logo.png"
+        firebase:
+          config: ".firebase/prod/google-services.json"
+
+      ios:
+        bundleId: "com.privo.creditsaison"
+        icon: "assets/Privo_AppStore_logo.png"
+        firebase:
+          config: ".firebase/prod/GoogleService-Info.plist"
+        variables:
+          WEBENGAGE_KEY:
+            value: "in~11b5642c7"
+          DEEPLINK_TEMPLATE:
+            value: "applinks:privo.onelink.me"
+          BRAND_DOMAIN:
+            value: "applinks:privo.customlinks.appsflyer.com"
+
+# For information on the generic Dart part of this file, see the
+# following page: https://dart.dev/tools/pub/pubspec
+
+# The following section is specific to Flutter.
+flutter:
+  fonts:
+    - family: arrows
+      fonts:
+        - asset: assets/fonts/arrows.ttf
+    - family: Figtree
+      fonts:
+        - asset: assets/fonts/figtree/Figtree-Black.ttf
+          weight: 900
+        - asset: assets/fonts/figtree/Figtree-BlackItalic.ttf
+          weight: 900
+          style: italic
+        - asset: assets/fonts/figtree/Figtree-Bold.ttf
+          weight: 700
+        - asset: assets/fonts/figtree/Figtree-BoldItalic.ttf
+          style: italic
+          weight: 700
+        - asset: assets/fonts/figtree/Figtree-ExtraBold.ttf
+          weight: 800
+        - asset: assets/fonts/figtree/Figtree-ExtraBoldItalic.ttf
+          style: italic
+          weight: 800
+        - asset: assets/fonts/figtree/Figtree-Italic.ttf
+          style: italic
+        - asset: assets/fonts/figtree/Figtree-Light.ttf
+          weight: 300
+        - asset: assets/fonts/figtree/Figtree-LightItalic.ttf
+          style: italic
+          weight: 300
+        - asset: assets/fonts/figtree/Figtree-Medium.ttf
+          weight: 500
+        - asset: assets/fonts/figtree/Figtree-MediumItalic.ttf
+          weight: 500
+          style: italic
+        - asset: assets/fonts/figtree/Figtree-Regular.ttf
+        - asset: assets/fonts/figtree/Figtree-SemiBold.ttf
+          weight: 600
+        - asset: assets/fonts/figtree/Figtree-SemiBoldItalic.ttf
+          weight: 600
+          style: italic
+
+  # The following line ensures that the Material Icons font is
+  # included with your application, so that you can use the icons in
+  # the material Icons class.
+  uses-material-design: true
+
+  # To add assets to your application, add an assets section, like this:
+  assets:
+    - assets/account_number_png.png
+    - assets/Company_png.png
+    - assets/confirm_account_number_png.png
+    - assets/download_icon.png
+    - assets/employment_type.png
+    - assets/error_dialog_illustration.png
+    - assets/fonts/figtree/Figtree-Black.ttf
+    - assets/fonts/figtree/Figtree-BlackItalic.ttf
+    - assets/fonts/figtree/Figtree-Bold.ttf
+    - assets/fonts/figtree/Figtree-BoldItalic.ttf
+    - assets/fonts/figtree/Figtree-ExtraBold.ttf
+    - assets/fonts/figtree/Figtree-ExtraBoldItalic.ttf
+    - assets/fonts/figtree/Figtree-Italic.ttf
+    - assets/fonts/figtree/Figtree-Light.ttf
+    - assets/fonts/figtree/Figtree-LightItalic.ttf
+    - assets/fonts/figtree/Figtree-Medium.ttf
+    - assets/fonts/figtree/Figtree-MediumItalic.ttf
+    - assets/fonts/figtree/Figtree-Regular.ttf
+    - assets/fonts/figtree/Figtree-SemiBold.ttf
+    - assets/fonts/figtree/Figtree-SemiBoldItalic.ttf
+    - assets/google.png
+    - assets/ifsc_code_png.png
+    - assets/json/loading_paper_flight_lottie.json
+    - assets/json/processing_application.json
+    - assets/logout_dialog.png
+    - assets/Privo_logo_int.png
+    - assets/Privo_Playstore_logo.png
+    - assets/splash_logo_bindaas_png.png
+    - assets/svg/aadhaar_icon_svg.svg
+    - assets/svg/aadhar_verification.svg
+    - assets/svg/account_number.svg
+    - assets/svg/appform_rejected_svg.svg
+    - assets/svg/applicationInProgress.svg
+    - assets/svg/Bank.svg
+    - assets/svg/bank_statement_illustration.svg
+    - assets/svg/bank_svg.svg
+    - assets/svg/bank_verify_failure.svg
+    - assets/svg/bank_verify_success.svg
+    - assets/svg/benefit_one_svg.svg
+    - assets/svg/bg_confetti.svg
+    - assets/svg/blub.svg
+    - assets/svg/building.svg
+    - assets/svg/bulb_icon.svg
+    - assets/svg/cake_png.png
+    - assets/svg/calenderImg.svg
+    - assets/svg/chevron_down_svg.svg
+    - assets/svg/city.svg
+    - assets/svg/CKYC_missing.svg
+    - assets/svg/close_no_outline.svg
+    - assets/svg/close_x_mark_svg.svg
+    - assets/svg/close_mark_svg.svg
+    - assets/svg/confetti.svg
+    - assets/svg/credit_line_created.svg
+    - assets/svg/credit_line_rejected.svg
+    - assets/svg/default_bank.svg
+    - assets/svg/digi_locker_logo_svg.svg
+    - assets/svg/digio_page_placeholder_svg.svg
+    - assets/svg/discount.svg
+    - assets/svg/disabled_card_pattern.svg
+    - assets/svg/disabled_inverted_card_pattern.svg
+    - assets/svg/discount.svg
+    - assets/svg/document.svg
+    - assets/svg/dollar.svg
+    - assets/svg/download.svg
+    - assets/svg/Due_Date.svg
+    - assets/svg/e_mandate_success.svg
+    - assets/svg/e_sign.svg
+    - assets/svg/e_sign_verified.svg
+    - assets/svg/Email.svg
+    - assets/svg/emandate.svg
+    - assets/svg/emandate_failure.svg
+    - assets/svg/employment_type_svg.svg
+    - assets/svg/eSignImg.svg
+    - assets/svg/failed_triangle_svg.svg
+    - assets/svg/fast_track_svg.svg
+    - assets/svg/feedback.svg
+    - assets/svg/feedback_success.svg
+    - assets/svg/green_shield_svg.svg
+    - assets/svg/hamburger.svg
+    - assets/svg/iconneed_help.svg
+    - assets/svg/ID.svg
+    - assets/svg/income_type_svg.svg
+    - assets/svg/info_bulb.svg
+    - assets/svg/info_icon.svg
+    - assets/svg/information_svg.svg
+    - assets/svg/inverted_enabled_card_pattern.svg
+    - assets/svg/chevron-up.svg
+    - assets/svg/location_colored.svg
+    - assets/svg/mailImg.svg
+    - assets/svg/maximize_svg.svg
+    - assets/svg/minimize_svg.svg
+    - assets/svg/Money.svg
+    - assets/svg/Next_EMI.svg
+    - assets/svg/no_pending_dues.svg
+    - assets/svg/npci.svg
+    - assets/svg/offer_expired_clock_svg.svg
+    - assets/svg/password_success.svg
+    - assets/svg/pattern_complete.svg
+    - assets/svg/pdf.svg
+    - assets/svg/pencil_icon.svg
+    - assets/svg/phoneImg.svg
+    - assets/svg/piggy_bank_failure_svg.svg
+    - assets/svg/policy_benefit_cf_svg.svg
+    - assets/svg/policy_benefit_ci_svg.svg
+    - assets/svg/policy_benefit_fc_svg.svg
+    - assets/svg/policy_benefit_fi_svg.svg
+    - assets/svg/policy_benefit_hcb_svg.svg
+    - assets/svg/policy_benefit_hd_svg.svg
+    - assets/svg/policy_benefit_jl_svg.svg
+    - assets/svg/policy_benefit_msp_svg.svg
+    - assets/svg/policy_benefit_picod_svg.svg
+    - assets/svg/policy_benefit_ppd_svg.svg
+    - assets/svg/policy_benefit_ptd_svg.svg
+    - assets/svg/privo_logo.svg
+    - assets/svg/profile-user.svg
+    - assets/svg/Profile.svg
+    - assets/svg/purpose.svg
+    - assets/svg/registered_svg.svg
+    - assets/svg/Rejected.svg
+    - assets/svg/rejected_document.svg
+    - assets/svg/Relax.svg
+    - assets/svg/residence_type_svg.svg
+    - assets/svg/rounded_clear_icon.svg
+    - assets/svg/sad_illustration.svg
+    - assets/svg/Salaried.svg
+    - assets/svg/same_offer_svg.svg
+    - assets/svg/secure.svg
+    - assets/svg/self_employed.svg
+    - assets/svg/selfie_verification.svg
+    - assets/svg/sparkle.svg
+    - assets/svg/sparkle_svg.svg
+    - assets/svg/tenure.svg
+    - assets/svg/verified_svg.svg
+    - assets/svg/vkyc_bulb_svg.svg
+    - assets/svg/vkyc_clock_svg.svg
+    - assets/svg/vkyc_access_svg.svg
+    - assets/svg/vkyc_pan_svg.svg
+    - assets/svg/vkyc_wifi_svg.svg
+    - assets/svg/web_svg.svg
+    - assets/svg/welcome_four_svg.svg
+    - assets/svg/welcome_one_svg.svg
+    - assets/svg/welcome_three_svg.svg
+    - assets/svg/welcome_two_svg.svg
+    - assets/svg/withdrawal_home_icon.svg
+    - assets/svg/withdrawal_location_icon.svg
+    - assets/svg/withdrawal_pattern.svg
+    - assets/svg/withdrawal_polling_svg.svg
+    - assets/svg/wIthdrawal_success.svg
+    - assets/svg/world-wide-web.svg
+    - assets/svg/calenderImg.svg
+    - assets/svg/applicationInProgress.svg
+    - assets/svg/eSignImg.svg
+    - assets/svg/bg_confetti.svg
+    - assets/svg/discount.svg
+    - assets/svg/profile-user.svg
+    - assets/svg/mailImg.svg
+    - assets/svg/phoneImg.svg
+    - assets/svg/pan.svg
+    - assets/svg/pan_verify_success.svg
+    - assets/svg/withdrawal_processing.svg
+    - assets/svg/aa_polling.svg
+    - assets/svg/aa_success.svg
+    - assets/svg/withdraw_success.svg
+    - assets/lottie/penny_testing_polling.json
+    - assets/lottie/offer_polling.json
+    - assets/lottie/cashout_polling.json
+    - assets/lottie/credit_score_refresh_sparkles.json
+    - assets/svg/applicationInProgressFull.svg
+    - assets/svg/eSignAgreement.svg
+    - assets/svg/relaxImg.svg
+    - assets/svg/partner_home_screen.svg
+    - assets/svg/e_sign_bg.svg
+
+      ##App rating icons
+    - assets/svg/app_rating/poor_icon.svg
+    - assets/svg/app_rating/average_selected.svg
+    - assets/svg/app_rating/average_unselected.svg
+    - assets/svg/app_rating/excellent_selected.svg
+    - assets/svg/app_rating/excellent_unselected.svg
+    - assets/svg/app_rating/good_selected.svg
+    - assets/svg/app_rating/good_unselected.svg
+    - assets/svg/app_rating/okay_selected.svg
+    - assets/svg/app_rating/okay_unselected.svg
+    - assets/svg/app_rating/poor_icon_selected.svg
+
+
+    - assets/svg/success_icon.svg
+    - assets/svg/coin.svg
+    - assets/svg/right_arrow.svg
+    - assets/svg/offer_timer.svg
+    - assets/svg/offer_upgraded_svg.svg
+    - assets/svg/interest_rate_icon.svg
+    - assets/svg/intrest_down_arrow_svg.svg
+    - assets/svg/star_upgrade.svg
+    - assets/svg/upgrade_success.svg
+    - assets/svg/low_grow_failure_img.svg
+    - assets/svg/low_grow_cancel_sign.svg
+    - assets/svg/fade_coin_limit.svg
+    - assets/svg/fade_coin_tenure.svg
+    - assets/svg/low_grow_tenureImg.svg
+    - assets/svg/low_and_grow_limitImg.svg
+    - assets/svg/fade_coin_roi.svg
+    - assets/svg/borrow_Img.svg
+    - assets/svg/repay_Img.svg
+    - assets/svg/reuse_Img.svg
+    - assets/svg/spend_Img.svg
+    - assets/svg/ring_Img.svg
+    - assets/svg/green_check_stepper.svg
+    - assets/svg/travel_icon.svg
+    - assets/svg/home_paint_icon.svg
+    - assets/svg/dream_ride_icon.svg
+    - assets/svg/shopping_icon.svg
+    - assets/svg/medical_icon.svg
+    - assets/svg/mobile_otp_svg.svg
+    - assets/svg/education_icon.svg
+    - assets/svg/sparkle_icon.svg
+    - assets/svg/single_spark.svg
+    - assets/svg/upi_white_logo.svg
+    - assets/svg/upi_grey_logo.svg
+    - assets/svg/upi_blue_logo.svg
+    - assets/svg/upload_pdf_svg.svg
+    - assets/svg/circular_right_arrow.svg
+    - assets/svg/arrow_right.svg
+    - assets/svg/bird_img.svg
+    - assets/svg/rejected_bird.svg
+    - assets/loan_application_blog.png
+    - assets/blog_person.png
+    - assets/youtube_thumbnail.png
+    - assets/svg/location_unservicable.svg
+    - assets/credit_score.png
+    - assets/dti.png
+    - assets/fire.png
+    - assets/loan_rejection.png
+    - assets/svg/low_Grow_processing_fee.svg
+    - assets/svg/fade_coin_pf.svg
+    - assets/svg/unlock_icon.svg
+    - assets/svg/like_icon.svg
+    - assets/svg/blog_facebook_icon.svg
+    - assets/svg/blog_whatsapp_icon.svg
+    - assets/svg/blog_instagram_icon.svg
+    - assets/svg/rounded_dislike_icon.svg
+    - assets/svg/rounded_like_icon.svg
+    - assets/svg/warning.svg
+    - assets/svg/white_info.svg
+    - assets/svg/splash_logo.svg
+    - assets/svg/powered_by_cs.svg
+    - assets/svg/powered_by_cs_small.svg
+    - assets/svg/question_icon.svg
+    - assets/svg/emi.svg
+    - assets/svg/fund_transfer.svg
+    - assets/svg/instant.svg
+    - assets/svg/interest_amount.svg
+    - assets/svg/paperless.svg
+    - assets/svg/golden_falling_coins.png
+    - assets/svg/arrow_dark.svg
+    - assets/svg/credit_line_expiry_alert.svg
+    - assets/svg/upgrade_offer_alert.svg
+    - assets/svg/expiry_timer.svg
+    - assets/svg/left_arrow.svg
+    - assets/svg/chinese_coin.svg
+    - assets/svg/sort_asc.svg
+    - assets/svg/filter.svg
+    - assets/svg/FilterNew.svg
+    - assets/svg/filter_list.svg
+    - assets/svg/clear_filter.svg
+    - assets/svg/danger.svg
+    - assets/svg/red_info_icon.svg
+    - assets/svg/top_right_blue_arrow_svg.svg
+    - assets/svg/logout_svg.svg
+    - assets/svg/available_wallet.svg
+    - assets/svg/used_limit_wallet.svg
+    - assets/svg/home_page_coin.svg
+    - assets/svg/right_tick.svg
+    - assets/svg/coins_home_page_card.svg
+    - assets/svg/e_mandate_svg.svg
+    - assets/svg/e_mandate_failure_svg.svg
+    - assets/svg/card_details_svg.svg
+    - assets/svg/auto_pay_success_svg.svg
+    - assets/svg/e_nach_dark_svg.svg
+    - assets/svg/e_nach_lite_svg.svg
+    - assets/svg/faq.svg
+    - assets/svg/faq_bg_circle1.svg
+    - assets/svg/help_appbar.svg
+    - assets/svg/credit_score_polling.svg
+    - assets/svg/credit_report_home.svg
+    - assets/cibil_logo.png
+    - assets/svg/credit_report_bank.svg
+    - assets/svg/credit_transaction_na.svg
+    - assets/svg/credit_score_scale.svg
+    - assets/svg/eye_closed.svg
+    - assets/svg/eye_opened.svg
+    - assets/svg/credit_score_star.svg
+    - assets/svg/credit_score_poor.svg
+    - assets/svg/credit_score_low.svg
+    - assets/svg/credit_score_fair.svg
+    - assets/svg/credit_score_very_good.svg
+    - assets/svg/credit_score_excellent.svg
+    - assets/svg/credit_card_icon.svg
+    - assets/svg/credit_score_polling_success.svg
+    - assets/svg/rejected_man.svg
+    - assets/svg/kyc_successfull.svg
+    - assets/svg/account_verification_success.svg
+    - assets/svg/home_page_bnv_home_icon_svg.svg
+    - assets/svg/home_page_bnv_loans_icon_svg.svg
+    - assets/svg/tenure_calender.svg
+    - assets/svg/upcoming_emi_svg.svg
+    - assets/svg/error_icon.svg
+    - assets/svg/delete_arrow.svg
+    - assets/svg/delete_succes.svg
+    - assets/svg/faq_details_left_bg.svg
+    - assets/svg/faq_details_right_bg.svg
+    - assets/svg/raise_issue.svg
+    - assets/svg/emi_calculator/calculate.svg
+    - assets/svg/emi_calculator/compare_arrows.svg
+    - assets/svg/emi_calculator/encrypted.svg
+    - assets/svg/emi_calculator/language.svg
+    - assets/svg/emi_calculator/schedule.svg
+    - assets/svg/emi_calculator/lap.svg
+    - assets/svg/emi_calculator/personal_loan.svg
+    - assets/svg/emi_calculator/sbl.svg
+    - assets/svg/emi_calculator/bussiness_loan.svg
+    - assets/svg/emi_calculator/credit_line.svg
+    - assets/svg/emi_calculator/equipment_fin_loan.svg
+    - assets/svg/emi_calculator/working_cap.svg
+    - assets/svg/emi_calculator/vacation_loan.svg
+    - assets/svg/get_started_sbl.svg
+    - assets/svg/know_more_collateral.svg
+    - assets/svg/know_more_fast.svg
+    - assets/svg/know_more_loan.svg
+    - assets/svg/know_more_percentage.svg
+    - assets/svg/loan_know_more_sbl.svg
+    - assets/svg/rating_star.svg
+    - assets/svg/document_icon.svg
+    - assets/svg/udyam_certificate.svg
+    - assets/svg/gst_certificate.svg
+    - assets/svg/right_direction_arrow.svg
+    - assets/svg/pd_pan.svg
+    - assets/svg/pd_name.svg
+    - assets/svg/pd_email.svg
+    - assets/svg/pd_dob.svg
+    - assets/svg/pd_location.svg
+    - assets/svg/pd_residence.svg
+    - assets/svg/udyam_home.svg
+    - assets/svg/green_arrow_down_left.svg
+    - assets/svg/blue_arrow_up_right.svg
+    - assets/svg/nothingToSeeHere.svg
+    - assets/svg/failureTransaction.svg
+    - assets/svg/successTransaction.svg
+
+    # SBL- Business Details
+    - assets/svg/business_entity_tf_svg.svg
+    - assets/svg/business_pan_tf_svg.svg
+    - assets/svg/ownership_type_tf_svg.svg
+    - assets/svg/registration_date_tf_svg.svg
+    - assets/svg/drop_down_tf_svg.svg
+    - assets/svg/sole_proprietor_icon_svg.svg
+    - assets/svg/partnership_icon_svg.svg
+    - assets/svg/llp_icon_svg.svg
+    - assets/svg/info_icon_svg.svg
+    - assets/svg/designation_tf_svg.svg
+    - assets/svg/shareholding_tf_svg.svg
+    - assets/svg/right_circle_arrow_icon_svg.svg
+    - assets/svg/check_circle_blue_svg.svg
+    - assets/svg/blue_bulb_svg.svg
+    - assets/svg/business_owner_icon.svg
+    - assets/svg/self_employed_icon.svg
+    - assets/svg/salaried_icon.svg
+    - assets/svg/pan_field_info.svg
+    - assets/svg/piggy_bank_verification_svg.svg
+    - assets/svg/e_mandate_polling_svg.svg
+    - assets/svg/ifsc_tf_icon_svg.svg
+    - assets/svg/sbl_disbursal_progress_svg.svg
+    - assets/svg/bank_selection_tf_svg.svg
+    - assets/svg/account_number_tf_svg.svg
+    - assets/svg/confirm_account_number_tf_svg.svg
+    - assets/svg/penny_testing_bank_blue_svg.svg
+    - assets/svg/penny_testing_bank_white_svg.svg
+    - assets/svg/phone_icon_tf_svg.svg
+    - assets/svg/sbd_edit_icon_svg.svg
+    - assets/svg/emi_calculator/emi_calculator.svg
+    ##Intro screen assets
+    - assets/svg/sbl_intro.svg
+    - assets/svg/loan_managment_intro.svg
+    - assets/svg/intro_screen/check_circle.svg
+    ##Permissions screen
+    - assets/svg/permissions/location.svg
+    - assets/svg/permissions/sms.svg
+    - assets/svg/permissions/camera.svg
+    - assets/svg/permissions/data_safety.svg
+    - assets/svg/permissions/data_safety_background.svg
+    - assets/svg/permissions/files_and_media_svg.svg
+    #Partner icons
+    - assets/partner/cred.svg
+    - assets/partner/lending_kart.svg
+    - assets/partner/money_view.svg
+    - assets/partner/airtel.svg
+    - assets/partner/paisa_bazaar.svg
+    #Home page
+    - assets/svg/home_page/sbl_home_page_card.svg
+    - assets/svg/home_page/explore_blogs_double_arrow.svg
+    - assets/svg/home_page/privo_instant_loan.svg
+    - assets/svg/home_page/sbl_disbursal_wait.svg
+    - assets/svg/home_page/credit_report.svg
+    - assets/svg/home_page/offer_baloons.svg
+    - assets/svg/home_page/expand_arrow.svg
+    - assets/svg/home_page/collapse_arrow.svg
+    - assets/svg/home_page/overdue_clock.svg
+    - assets/svg/home_page/advance_emi_alert.svg
+    - assets/svg/home_page/expiry.svg
+    - assets/svg/home_page/low_grow.svg
+    - assets/svg/know_more_clp.svg
+    - assets/svg/get_started_clp.svg
+    - assets/svg/add_icon.svg
+    - assets/svg/business_sector_icon.svg
+    - assets/svg/business_nature_icon.svg
+    - assets/svg/attach_file_icon.svg
+    - assets/svg/file_eye_icon.svg
+    - assets/svg/file_delete_icon.svg
+    - assets/svg/check_circle.svg
+    - assets/svg/edit_icon.svg
+    - assets/svg/retry_icon.svg
+    - assets/svg/doc.svg
+    - assets/svg/business_polling_svg.svg
+    - assets/aadhaar_logo.png
+    - assets/svg/aadhar_icon.svg
+    - assets/svg/selfie_icon.svg
+    - assets/svg/id_card_icon.svg
+    - assets/svg/edit_icon.svg
+    - assets/svg/vkyc_attempts_reached.svg
+    - assets/svg/okyc_expired.svg
+    - assets/svg/vkyc_error.svg
+    - assets/svg/sbd_offer_gifts_svg.svg
+    - assets/svg/state_tf_icon_svg.svg
+    - assets/svg/city_tf_icon_svg.svg
+    - assets/svg/bank_transfer_icon_svg.svg
+    - assets/svg/cash_icon_svg.svg
+    - assets/svg/net_monthly_income_tf_icon_svg.svg
+    - assets/svg/check_circle_red.svg
+    - assets/svg/initial_offer_bg.svg
+    - assets/svg/aa_failure.svg
+    - assets/svg/location_rejection_svg.svg
+    - assets/svg/kyc_rejection_svg.svg
+    - assets/svg/general_rejection_svg.svg
+    - assets/svg/pan_rejection_svg.svg
+    - assets/svg/doubleArrow.svg
+    - assets/svg/bank_icon_dark_blue_circle_svg.svg
+    - assets/svg/home_page/privo_wallet_with_mobile.svg
+    - assets/svg/home_page/coins.svg
+    - assets/svg/home_page/finsights.svg
+    - assets/svg/home_page/credit_report.svg
+    - assets/svg/home_page/finsights/authorize.svg
+    - assets/svg/home_page/finsights/link.svg
+    - assets/svg/home_page/finsights/manage.svg
+    - assets/svg/home_page/home_page_emi_calculator.svg
+    - assets/svg/home_page/financial_tool_sparkle.svg
+    #Final offer polling
+    - assets/svg/final_offer_polling/polling_arrow.svg
+    - assets/svg/final_offer_polling/double_arrow.svg
+    - assets/svg/evaluate_Bank_Details_Img.svg
+    #All loans
+    - assets/svg/all_loans/no_loans.svg
+    - assets/svg/splash/cs_india_logo.svg
+    - assets/svg/splash/splash_background.svg
+    - assets/svg/know_more_top_up.svg
+    - assets/svg/topup_credit_score.svg
+    - assets/svg/topup_pay_early.svg
+    - assets/svg/topup_time.svg
+    - assets/svg/topup_outstanding_balance_tree.svg
+    - assets/svg/topup_amount_tree.svg
+    #offer zone
+    - assets/svg/offer_zone/offer_zone_home_page_section_bg_svg.svg
+    - assets/svg/offer_zone/offer_zone_text_svg.svg
+    - assets/svg/offer_zone/offer_zone_top_up_card_svg.svg
+    - assets/svg/offer_zone/offer_zone_top_up_card_in_progress_svg.svg
+    - assets/svg/offer_zone/top_up_initial_offer.svg
+    - assets/svg/offer_zone/low_grow_home_page_illustration.svg
+    - assets/svg/offer_zone/top_up_rejection_svg.svg
+    #Offer
+    - assets/svg/offer/top_up_offer.svg
+    #Credit score
+    - assets/svg/credit_report/credit_age.svg
+    - assets/svg/credit_report/credit_enquiries.svg
+    - assets/svg/credit_report/credit_mix.svg
+    - assets/svg/credit_report/credit_score_bank.svg
+    - assets/svg/credit_report/credit_utilisation.svg
+    - assets/svg/credit_report/on_time_payment.svg
+    - assets/svg/credit_report/credit_report_arrow.svg
+    - assets/svg/credit_report/experian.svg
+    - assets/svg/credit_report/credit_score_bottom_sheet_svg.svg
+    - assets/svg/credit_report/refresh_bulb.svg
+    - assets/svg/arrow_back.svg
+    - assets/svg/credit_score/experian_logo.svg
+    - assets/svg/credit_score/credit_score_in_progress.svg
+    - assets/svg/credit_score/credit_score_success.svg
+    - assets/svg/credit_score/credit_score_know_more.svg
+    - assets/svg/credit_score/credit_score_check.svg
+    - assets/svg/credit_score/credit_score_data_protection.svg
+    - assets/svg/credit_score/credit_score_financial_health.svg
+    - assets/svg/credit_score/credit_score_updates.svg
+    - assets/svg/credit_score/credit_score_slide_initial_thumb.svg
+    - assets/svg/credit_score/credit_score_slide_refreshing_thumb.svg
+    - assets/svg/credit_score/credit_score_slide_refreshed_thumb.svg
+    - assets/svg/credit_score/credit_score_refresh_bottom_sheet_bg.svg
+    - assets/svg/credit_score/credit_score_bottom_sheet_stars.svg
+    - assets/svg/double_arrow_right.svg
+    - assets/svg/credit_report/experian_d2c_frame.svg
+    - assets/svg/credit_score/credit_score_know_more_v2.svg
+    - assets/svg/icons/information_info.svg
+    - assets/credit_score/credit_score_refresh_bottom_sheet_people.png
+    #Know more finsights
+    - assets/svg/know_more/finsights/enhanced_credit.svg
+    - assets/svg/know_more/finsights/financial_overview.svg
+    - assets/svg/know_more/finsights/insights.svg
+    - assets/svg/know_more/finsights/seamless.svg
+    - assets/svg/know_more/finsights/finsights_know_more.svg
+    - assets/svg/know_more/finsights/security_first.svg
+    - assets/svg/know_more/sbl/know_more_sbl.svg
+    - assets/svg/know_more/clp/know_more_clp.svg
+    - assets/svg/know_more/clp/clp_know_more_bg.svg
+    - assets/svg/know_more/sbl/sbl_know_more_bg.svg
+    #Finsights
+    - assets/svg/finsights/finsights_dashboard_background_svg.svg
+    - assets/svg/finsights/coin_fin_sight.svg
+    - assets/svg/finsights/finsights_bottom_background.svg
+    - assets/svg/finsights/finsights_dashboard_eye_icon_svg.svg
+    - assets/svg/finsights/finsights_dashboard_closed_eye_icon_svg.svg
+    - assets/svg/finsights/finsights_avg_balance_icon_svg.svg
+    - assets/svg/finsights/finsights_avg_credit_icon_svg.svg
+    - assets/svg/finsights/finsights_avg_debit_icon_svg.svg
+    - assets/svg/finsights/finsights_no_transactions.svg
+    #Components
+    - assets/svg/components/app_bar_back_icon_svg.svg
+    - assets/svg/components/app_bar_info_icon_svg.svg
+    - assets/svg/components/app_bar_info_icon_svg.svg
+    # FinSights
+    - assets/svg/finsights/bank_illustration.svg
+    - assets/svg/finsights/bank_icon.svg
+    - assets/svg/finsights/bank_not_found_svg.svg
+    - assets/svg/finsights/alert_red_svg.svg
+    - assets/svg/business_center.svg
+    - assets/finsights/finsights_intro_one.png
+    - assets/finsights/finsights_intro_two.png
+    - assets/finsights/finsights_intro_three.png
+    - assets/finsights/finsights_intro_social_proof.png
+    - assets/svg/finsights/drop_off_illustration.svg
+
+    #Badge
+    - assets/svg/components/badge/badge_check.svg
+
+    - assets/cibil_logo.png
+    - assets/svg/clp_disabled_bg.svg
+
+    #Shimmer Loaders
+    - assets/lottie/shimmer_line_graph.json
+    # bank logo
+    - assets/svg/bank_logos/generic.svg
+    - assets/svg/bank_logos/cs.svg
+    - assets/svg/bank_logos/hdfc.svg
+    - assets/svg/bank_logos/icici.svg
+    - assets/svg/bank_logos/sbi.svg
+    - assets/svg/bank_logos/axis.svg
+    - assets/svg/bank_logos/kotak.svg
+    - assets/svg/bank_logos/bob.svg
+    - assets/svg/bank_logos/pnb.svg
+    - assets/svg/bank_logos/indian_overseas_bank.svg
+    - assets/svg/bank_logos/union_bank.svg
+    - assets/svg/bank_logos/canara.svg
+    - assets/svg/bank_logos/indusind.svg
+    - assets/svg/bank_logos/federal.svg
+    - assets/svg/bank_logos/yes.svg
+    - assets/svg/bank_logos/au_small_finance.svg
+    - assets/svg/bank_logos/indian_bank.svg
+    - assets/svg/bank_logos/idbi.svg
+    - assets/svg/bank_logos/central_bank_of_india.svg
+    - assets/svg/bank_logos/experian_default_bank_logo.svg
+    #    icons
+    - assets/svg/icons/clock_3.svg
+    - assets/svg/icons/information_filled.svg
+    - assets/svg/icons/information_outlined.svg
+    - assets/svg/icons/bank_small_space.svg
+    - assets/svg/icons/accordion_1.svg
+    - assets/svg/icons/cross_mark.svg
+    - assets/svg/finsights/finsights_blue.svg
+    - assets/svg/finsights/finsights_3_steps.svg
+    - assets/svg/finsights/finsights_financial.svg
+    - assets/svg/icons/error_filled.svg
+    - assets/svg/icons/alert_filled.svg
+    - assets/svg/icons/accordian_right.svg
+    - assets/svg/icons/copy_icon.svg
+    - assets/svg/icons/faq_icon.svg
+    - assets/svg/icons/help.svg
+    - assets/svg/icons/verified_secured.svg
+    - assets/svg/icons/download.svg
+    - assets/svg/icons/transactions.svg
+    - assets/svg/icons/description.svg
+    - assets/svg/non_eligible_finsights/waitImageTwo.svg
+    - assets/svg/icons/copy_simple.svg
+    - assets/svg/icons/success_gradient.svg
+    - assets/svg/icons/sparkle_drawer.svg
+    - assets/svg/icons/question_mark.svg
+    - assets/svg/overdue_alert_bulb.svg
+    - assets/svg/icons/help.svg
+    - assets/svg/icons/information_outlined.svg
+
+    # loan details
+    - assets/svg/loan_details/loan_amount_svg.svg
+    - assets/svg/loan_details/emi_amount_svg.svg
+    - assets/svg/loan_details/loan_list_bg.svg
+
+    - assets/svg/icons/error_dialog_icon.svg
+    - assets/svg/icons/payment_success_icon.svg
+    # Financial Tools
+    - assets/svg/financial_tools/emi_calculator.svg
+    - assets/svg/financial_tools/emi_calculator_wide.svg
+    - assets/svg/financial_tools/credit_score.svg
+    - assets/svg/financial_tools/finsights_regular.svg
+    - assets/svg/financial_tools/finsights_long.svg
+    - assets/svg/icons/loans.svg
+    - assets/svg/icons/finance.svg
+    - assets/svg/icons/clock2.svg
+    - assets/svg/primary_logo3.svg
+    - assets/svg/aa_bank_success.svg
+    - assets/svg/redirect_failure.svg
+
+    # Referral
+    - assets/svg/referral/referral_home_image.svg
+    - assets/svg/referral/referral_intro_one.svg
+    - assets/svg/referral/referral_intro_two.svg
+    - assets/svg/referral/referral_intro_three.svg
+    - assets/svg/referral/referral_gift_box.svg
+    - assets/svg/referral/referral_workflow_one.svg
+    - assets/svg/referral/referral_workflow_two.svg
+    - assets/svg/referral/referral_workflow_three.svg
+    - assets/svg/referral/leader_board.svg
+    - assets/svg/referral/referral_bell_icon.svg
+
+     # Non eligible finsights
+    - assets/svg/non_eligible_finsights/non_finsights_1.svg
+    - assets/svg/non_eligible_finsights/non_finsights_2.svg
+    - assets/svg/non_eligible_finsights/non_finsights_3.svg
+    - assets/svg/non_eligible_finsights/non_eligible_grid_one.svg
+    - assets/svg/non_eligible_finsights/non_eligible_grid_two.svg
+    - assets/svg/non_eligible_finsights/non_eligible_grid_three.svg
+    - assets/svg/non_eligible_finsights/non_eligible_grid_four.svg
+    - assets/svg/non_eligible_finsights/calendar_today.svg
+    - assets/svg/non_eligible_finsights/payments.svg
+    - assets/svg/non_eligible_finsights/receipt_long.svg
+    - assets/svg/non_eligible_finsights/security.svg
+    - assets/svg/non_eligible_finsights/waitlistImage.svg
+    - assets/svg/non_eligible_finsights/nonFinSightDarkImage.svg
+    - assets/bgSparkles.png
+    - assets/svg/non_eligible_finsights/coin_finance.svg
+    - assets/svg/non_eligible_finsights/coin_bank.svg
+    - assets/svg/non_eligible_finsights/nonEligibleBgImg.svg
+    - assets/svg/non_eligible_finsights/non_finsight_bg_image_two.svg
+    - assets/svg/smartphone.svg
+    - assets/svg/spending_calender.svg
+    - assets/svg/spending_shopping.svg
+    - assets/svg/highestSpending.svg
+    - assets/svg/lowestSpending.svg
+    - assets/svg/rs_icon.svg
+    - assets/svg/leaderboard.svg
+    - assets/svg/spendingBg.svg
+    - assets/svg/expand_circle_right.svg
+    - assets/svg/spending_snapshot/emi_icon.svg
+    - assets/svg/spending_snapshot/loan_icon.svg
+    - assets/svg/spending_snapshot/transferTo.svg
+    - assets/svg/spending_snapshot/transfer_from.svg
+    - assets/svg/spending_snapshot/withdraw_icon.svg
+    - assets/svg/spending_snapshot/creditcardPayment.svg
+    - assets/svg/spending_snapshot/lunch_dining.svg
+    - assets/svg/spending_snapshot/luggage.svg
+    - assets/svg/spending_snapshot/local_taxi.svg
+    - assets/svg/spending_snapshot/bed.svg
+    - assets/svg/spending_snapshot/entertainment.svg
+    - assets/svg/spending_snapshot/shopping_bag.svg
+    - assets/svg/spending_snapshot/utility.svg
+    - assets/svg/spending_snapshot/investment.svg
+    - assets/svg/spending_snapshot/cardiology.svg
+    - assets/svg/spending_snapshot/cottage.svg
+    - assets/svg/spending_snapshot/spa.svg
+    - assets/svg/spending_snapshot/dictionary.svg
+    - assets/svg/spending_snapshot/category.svg
+    - assets/svg/spending_snapshot/no_spending.svg
+    - assets/svg/finsights/ignosisBg.svg
+    - assets/svg/finsights/ignosis_search.svg
+    - assets/svg/finsights/electric_bolt.svg
+    - assets/svg/financial_tools/bank_account_regular.svg
+    - assets/svg/financial_tools/bank_account_long.svg
+    - assets/svg/credit_score/credit_score_confetti.svg
+    - assets/svg/creditScoreDetailsImg.svg
+    - assets/svg/finsights/shopping_icon_finsights.svg
+    - assets/svg/nonEligibleFinsights.svg
+    - assets/splashScreenAnimation.json
+    - assets/svg/finsights/mobileEWallet.svg
+    - assets/svg/finsights/mobile_info.svg
+    - assets/svg/lock.svg
+    - assets/svg/clearDues.svg
+    - assets/svg/finsights/wait_object.svg
+    - assets/svg/finsights/info.svg
+
+
+    #Refree flow
+    - assets/svg/refree/referral_code.svg
+    - assets/svg/refree/welcome_celebration.svg
+    - assets/svg/refree/referral_business.svg
+    - assets/svg/refree/referral_credit_score.svg
+    - assets/svg/refree/referral_emi_calculator.svg
+
+    - assets/svg/crossWhite.svg
+    - assets/svg/CrossButton.svg
+    - assets/svg/icons/description.svg
+    - assets/svg/icons/transactions.svg
+    - assets/svg/icons/verified_secured.svg
+    - assets/svg/loan_details/loan_amount_svg.svg
+    - assets/svg/loan_details/emi_amount_svg.svg
+    - assets/svg/loan_details/loan_list_bg.svg
+    - assets/svg/newPhoneSvg.svg
+    - assets/svg/newMailSvg.svg
+
+    #Navigation drawer
+    - assets/svg/home_drawer.svg
+    - assets/svg/k_base_drawer.svg
+    - assets/svg/logout.svg
+    - assets/svg/h_support_drawer.svg
+    - assets/svg/r_friend_drawer.svg
+
+    - assets/svg/credit_score/trending_up.svg
+    - assets/svg/credit_score/right_arrow_credit_score.svg
+    - assets/svg/credit_score/credit_score_img.svg
+    - assets/svg/credit_score/trending_down.svg
+
+  # An image asset can refer to one or more resolution-specific "variants", see
+  # https://flutter.dev/assets-and-images/#resolution-aware.
+
+  # For details regarding adding assets from package dependencies, see
+  # https://flutter.dev/assets-and-images/#from-packages
+
+  # To add custom fonts to your application, add a fonts section here,
+  # in this "flutter" section. Each entry in this list should have a
+  # "family" key with the font family name, and a "fonts" key with a
+  # list giving the asset and other descriptors for the font. For
+  # example:
+  #
+  # For details regarding fonts from package dependencies,
+  # see https://flutter.dev/custom-fonts/#from-packages

@@ -1,0 +1,60 @@
+buildscript {
+    ext.kotlin_version = '1.9.10'
+    repositories {
+        google()
+        mavenCentral()
+    }
+
+    dependencies {
+        classpath 'com.android.tools:r8:8.2.42'
+        classpath 'com.android.tools.build:gradle:8.1.0'
+        classpath 'com.google.gms:google-services:4.3.2'
+        classpath 'com.google.firebase:firebase-crashlytics-gradle:2.7.1'
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+        classpath "androidx.navigation:navigation-safe-args-gradle-plugin:2.5.3"
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        mavenCentral()
+        maven { url "https://jitpack.io" }
+        maven { url "https://salesforce-marketingcloud.github.io/MarketingCloudSDK-Android/repository" }
+        maven {
+            url "https://salesforce-marketingcloud.github.io/mobile-sdk-cdp-android/repository"
+        }
+//        maven {
+//            credentials {
+//                username "karza_android"
+//                password "ZMQWUMGp2eSdexZkQMyQ"
+//            }
+//            authentication{
+//                basic(BasicAuthentication)
+//            }
+//            url "https://api.bitbucket.org/2.0/repositories/" +
+//
+//                    "krzandroid/sdk/src/releases/"
+//        }
+        maven {
+            url "https://s3.ap-south-1.amazonaws.com/hvsdk/android/releases"
+//            credentials(AwsCredentials) {
+//                accessKey 'AKIAXB3KY4F5AQJD6WHT'
+//                secretKey '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'
+//            }
+        }
+    }
+}
+
+rootProject.buildDir = '../build'
+subprojects {
+    project.buildDir = "${rootProject.buildDir}/${project.name}"
+}
+subprojects {
+    project.evaluationDependsOn(':app')
+}
+
+tasks.register("clean", Delete) {
+    delete rootProject.buildDir
+}
+

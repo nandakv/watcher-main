@@ -1,0 +1,9 @@
+#include "Generated.xcconfig"
+
+FLUTTER_TARGET=lib/main-integration.dart
+ASSET_PREFIX=integration
+BUNDLE_NAME=Credit Saison IN INT
+BUNDLE_DISPLAY_NAME=Credit Saison IN INT
+WEBENGAGE_KEY=in~76aa303
+DEEPLINK_TEMPLATE=applinks:iosdtest.onelink.me
+BRAND_DOMAIN=applinks:uatapp.uat.csifin.xyz

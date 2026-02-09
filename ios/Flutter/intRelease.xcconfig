@@ -1,0 +1,6 @@
+#include "Generated.xcconfig"
+
+FLUTTER_TARGET=lib/main-integration.dart
+
+ASSET_PREFIX=int
+BUNDLE_NAME=Credit Saison IN INT

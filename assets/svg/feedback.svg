@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+  <g id="feedback" transform="translate(-0.094 -0.08)">
+    <rect id="Rectangle_2377" data-name="Rectangle 2377" width="21.571" height="14.408" rx="2" transform="translate(0.094 5.792)" fill="#80d6fb"/>
+    <path id="Path_7409" data-name="Path 7409" d="M258.717,3.156l-9.283,9.283-2.658.109.109-2.658L256.169.608a1.8,1.8,0,1,1,2.548,2.548Z" transform="translate(-235.151 0)" fill="#3e8fc2"/>
+    <path id="Path_7413" data-name="Path 7413" d="M258.717,13.852l-9.283,9.283-2.658.109L258.718,11.3a1.8,1.8,0,0,1,0,2.549Z" transform="translate(-235.151 -10.696)" fill="#3482b4"/>
+    <path id="Path_7414" data-name="Path 7414" d="M250.052,198.193l-.617.617-2.658.109.109-2.658.617-.617Z" transform="translate(-235.133 -186.418)" fill="#707070"/>
+    <path id="Path_7415" data-name="Path 7415" d="M250.052,224.023l-.617.617-2.658.109,2-2Z" transform="translate(-235.133 -212.252)" fill="#363840"/>
+    <path id="Path_7417" data-name="Path 7417" d="M19.728,66.825,19.691,70.9l6.186-4.071Z" transform="translate(-13.728 -46.816)" fill="#80d6fb"/>
+    <line id="Line_220" data-name="Line 220" x2="6.003" transform="translate(3.837 10.115)" fill="none" stroke="#eaeaea" stroke-linecap="round" stroke-width="1"/>
+    <line id="Line_221" data-name="Line 221" x2="6.003" transform="translate(3.837 12.856)" fill="none" stroke="#eaeaea" stroke-linecap="round" stroke-width="1"/>
+    <line id="Line_222" data-name="Line 222" y1="0.103" x2="11.106" transform="translate(3.834 15.494)" fill="none" stroke="#eaeaea" stroke-linecap="round" stroke-width="1"/>
+  </g>
+</svg>

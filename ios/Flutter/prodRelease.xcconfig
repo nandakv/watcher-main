@@ -1,0 +1,9 @@
+#include "Generated.xcconfig"
+
+FLUTTER_TARGET=lib/main-prod.dart
+ASSET_PREFIX=prod
+BUNDLE_NAME=Credit Saison IN
+BUNDLE_DISPLAY_NAME=Credit Saison IN
+WEBENGAGE_KEY=in~11b5642c7
+DEEPLINK_TEMPLATE=applinks:privo.onelink.me
+BRAND_DOMAIN=applinks:privo.customlinks.appsflyer.com

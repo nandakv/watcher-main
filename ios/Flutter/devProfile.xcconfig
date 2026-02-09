@@ -1,0 +1,9 @@
+#include "Generated.xcconfig"
+
+FLUTTER_TARGET=lib/main-dev.dart
+ASSET_PREFIX=dev
+BUNDLE_NAME=Credit Saison IN Dev
+BUNDLE_DISPLAY_NAME=Credit Saison IN Dev
+WEBENGAGE_KEY=in~76aa303
+DEEPLINK_TEMPLATE=applinks:iosdtest.onelink.me
+BRAND_DOMAIN=applinks:uatapp.uat.csifin.xyz

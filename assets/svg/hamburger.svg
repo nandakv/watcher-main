@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="67" height="57" viewBox="0 0 67 57">
+  <defs>
+    <clipPath id="clip-Hamburger">
+      <rect width="67" height="57"/>
+    </clipPath>
+  </defs>
+  <g id="Hamburger" clip-path="url(#clip-Hamburger)">
+    <g id="a" transform="translate(-15 -21.18)">
+      <g id="Group_7035" data-name="Group 7035" transform="translate(39 39.18)">
+        <path id="Path_8017" data-name="Path 8017" d="M58.828,105.35h-18.8a.585.585,0,0,1,0-1.17h18.8a.585.585,0,0,1,0,1.17Z" transform="translate(-39.393 -96.986)" fill="#161742" stroke="#161742" stroke-width="0.5"/>
+        <path id="Path_8018" data-name="Path 8018" d="M56.019,40.35H39.563a.585.585,0,0,1,0-1.17H56.019a.585.585,0,0,1,0,1.17Z" transform="translate(-39 -39.18)" fill="#161742" stroke="#161742" stroke-width="0.5"/>
+        <path id="Path_8019" data-name="Path 8019" d="M53.036,174.35H39.585a.585.585,0,1,1,0-1.17H53.036a.585.585,0,1,1,0,1.17Z" transform="translate(-39 -158.35)" fill="#161742" stroke="#161742" stroke-width="0.5"/>
+      </g>
+    </g>
+  </g>
+</svg>

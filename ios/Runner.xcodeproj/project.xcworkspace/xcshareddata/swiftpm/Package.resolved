@@ -1,0 +1,15 @@
+{
+  "originHash" : "b87fca29e5fa210c1abcde17d1904d3a84851e37d1d1a0a62345bd7eedb23dbd",
+  "pins" : [
+    {
+      "identity" : "mobile-sdk-cdp-ios",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/salesforce-marketingcloud/mobile-sdk-cdp-ios",
+      "state" : {
+        "revision" : "fc2ced25bbcc9746cb1d74e8488273f77ff29b20",
+        "version" : "2.0.4"
+      }
+    }
+  ],
+  "version" : 3
+}

@@ -1,0 +1,18 @@
+<resources>
+    <string name="title_activity_emandate_web_view">Privo</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="default_notification_channel_id">high_importance_channel</string>
+
+
+<!--    App id for facebook sdk-->
+    <string name="facebook_app_id">777427119988201</string>
+    <string name="facebook_client_token">934fb122c7606318409e2a8f3db01786</string>
+<!--    <string name="html"><![CDATA[<html><body> <button id=\"rzp-button1\"> Pay</button> <script src=\"https://checkout.razorpay.com/v1/checkout.js\"></script>\n<script>\n var options = {\n \"key\": \"rzp_test_yfErT76MqVVxrq\",\n \"order_id\": \"order_Ip3O6Xt65cgC1Z\",\n \"customer_id\": \"cust_IhxgLzI4StwnTx\",\n \"callback_url\":\"https://stage.wishfin.com/credit-saison/mandate-response?appFormId=080a9f68-1661-4fc5-9be5-6aee075d85d1&status=success\",\n \"recurring\": \"1\",\n \"theme\": {\n \"color\": \"#F37254\"\n }\n };\n var rzp1 = new Razorpay(options);\n document.getElementById(\'rzp-button1\').onclick = function (e) {\n rzp1.open();\n e.preventDefault();\n }\n </script>\n </body>\n </html>\n]]></string>-->
+</resources>
